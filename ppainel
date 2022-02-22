@@ -19,7 +19,7 @@ echo -e "\e[1;31m[\e[0;1m1\e[31m]\e[1;34m - \e[0;1;33m$option1\e[0m"
 echo -e "\e[1;31m[\e[0;1m2\e[31m]\e[1;34m - \e[0;1;33m$option2\e[0m"
 echo -e "\e[1;31m[\e[0;1m3\e[31m]\e[1;34m - \e[0;1;33m$option3\e[0m"
 
-echo -ne "\e[33m\e[1mEscolha a opção:\e[0;1m "
+echo -ne "\n\e[33m\e[1mEscolha a opção:\e[0;1m "
 read option
 
 clear

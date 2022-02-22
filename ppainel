@@ -1,0 +1,231 @@
+#!/bin/bash
+###############################################################
+#Script Name: painel
+#Descrption: este script consulta, adiciona e remove dados sobre
+#            clientes, revendedores e servidores.
+#Author: Pandin
+#Contact: https://t.me/pandin
+###############################################################
+
+clear
+
+echo -e "\e[41;1m        Instalador Pandin        \e[0m\n"
+
+option1="Se você usa o PC \e[1;31m(\e[0;1;34mPutty SSH\e[1;31m)"
+option2="Se você usa o celular \e[1;31m(\e[0;1;34mJuiceSSH/Termius/Putty/Admin Hands\e[1;31m)"
+option3="Se você usa o celular \e[1;31m(\e[0;1;34mTermux\e[1;31m)"
+
+echo -e "\e[1;31m[\e[0;1m1\e[31m]\e[1;34m - \e[0;1;33m$option1\e[0m"
+echo -e "\e[1;31m[\e[0;1m2\e[31m]\e[1;34m - \e[0;1;33m$option2\e[0m"
+echo -e "\e[1;31m[\e[0;1m3\e[31m]\e[1;34m - \e[0;1;33m$option3\e[0m"
+
+echo -ne "\e[33m\e[1mEscolha a opção:\e[0;1m "
+read option
+
+clear
+
+if [ $option != "1" -a $option != "2" -a $option != "3" -a $option != "0" ]; then
+    echo -e "\e[1;31mComando Inválido!"
+    sleep 3
+fi
+
+if [ $option = "1" ]; then
+    
+    mkdir /etc/pandin
+    mkdir /etc/pandin/scripts
+    mkdir /etc/pandin/adicionar
+    mkdir /etc/pandin/banco
+    mkdir /etc/pandin/banco/cliente
+    mkdir /etc/pandin/banco/revendedor
+    mkdir /etc/pandin/banco/servidor
+    echo "" > /etc/pandin/adicionar/dbcliente
+    echo "" > /etc/pandin/adicionar/dbrevendedor
+    echo "" > /etc/pandin/adicionar/dbcliente
+
+    wget -b mzpainelssh.site/pandin/painel
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/consultar
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/adicionar
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/vencehoje
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/avencer
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/vencidos
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/remover
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/removidos
+    rm wget-log
+    clear
+
+    sleep 3
+
+    chmod 777 painel consultar adicionar vencehoje avencer vencidos remover removidos
+
+    mv painel /bin/painel
+    mv consultar /etc/pandin/scripts/consultar
+    mv adicionar /etc/pandin/scripts/adicionar
+    mv vencehoje /etc/pandin/scripts/vencehoje
+    mv avencer /etc/pandin/scripts/avencer
+    mv vencidos /etc/pandin/scripts/vencidos
+    mv remover /etc/pandin/scripts/remover
+    mv removidos /etc/pandin/scripts/removidos
+
+    clear  
+    
+    echo -e "\e[1;33mDesenvolvedor: \e[1;34mPandin\e[0m"
+    echo -e "\e[1;33mContato: \e[1;32mt.me/pandin\e[0m"
+    echo -e "\e[1;33mUse o comando \e[0;1mpainel"
+
+
+    rm ppainel
+fi
+
+if [ $option = "2" ]; then
+
+    mkdir /etc/pandin
+    mkdir /etc/pandin/scripts
+    mkdir /etc/pandin/adicionar
+    mkdir /etc/pandin/banco
+    mkdir /etc/pandin/banco/cliente
+    mkdir /etc/pandin/banco/revendedor
+    mkdir /etc/pandin/banco/servidor
+    echo "" > /etc/pandin/adicionar/dbcliente
+    echo "" > /etc/pandin/adicionar/dbrevendedor
+    echo "" > /etc/pandin/adicionar/dbcliente
+
+    wget -b mzpainelssh.site/pandin/painel
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/consultar
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/adicionar
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/vencehoje
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/avencer
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/vencidos
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/remover
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/removidos
+    rm wget-log
+    clear
+
+    sleep 3
+
+    chmod 777 painel consultar adicionar vencehoje avencer vencidos remover removidos
+
+    mv painel /bin/painel
+    mv consultar /etc/pandin/scripts/consultar
+    mv adicionar /etc/pandin/scripts/adicionar
+    mv vencehoje /etc/pandin/scripts/vencehoje
+    mv avencer /etc/pandin/scripts/avencer
+    mv vencidos /etc/pandin/scripts/vencidos
+    mv remover /etc/pandin/scripts/remover
+    mv removidos /etc/pandin/scripts/removidos
+
+    echo -e "\e[1;33mDesenvolvedor: \e[1;34mPandin\e[0m"
+    echo -e "\e[1;33mContato: \e[1;32mt.me/pandin\e[0m"
+    echo -e "\e[1;33mUse o comando \e[0;1mpainel"
+
+    rm ppainel
+fi
+
+if [ $option = "3" ]; then
+
+    mkdir /data/data/com.termux/files/usr/etc/pandin
+    mkdir /data/data/com.termux/files/usr/etc/pandin/scripts
+    mkdir /data/data/com.termux/files/usr/etc/pandin/adicionar
+    mkdir /data/data/com.termux/files/usr/etc/pandin/banco
+    mkdir /data/data/com.termux/files/usr/etc/pandin/banco/cliente
+    mkdir /data/data/com.termux/files/usr/etc/pandin/banco/revendedor
+    mkdir /data/data/com.termux/files/usr/etc/pandin/banco/servidor
+    echo "" > /data/data/com.termux/files/usr/etc/pandin/adicionar/dbcliente
+    echo "" > /data/data/com.termux/files/usr/etc/pandin/adicionar/dbrevendedor
+    echo "" > /data/data/com.termux/files/usr/etc/pandin/adicionar/dbcliente
+
+    wget -b mzpainelssh.site/pandin/mobile/painel
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/mobile/consultar
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/mobile/adicionar
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/mobile/vencehoje
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/mobile/avencer
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/mobile/vencidos
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/mobile/remover
+    rm wget-log
+    clear
+
+    wget -b mzpainelssh.site/pandin/mobile/removidos
+    rm wget-log
+    clear
+
+
+    sleep 3
+
+    chmod 777 painel consultar adicionar vencehoje avencer vencidos remover removidos
+
+    mv consultar /data/data/com.termux/files/usr/etc/pandin/scripts/consultar
+    mv adicionar /data/data/com.termux/files/usr/etc/pandin/scripts/adicionar
+    mv vencehoje /data/data/com.termux/files/usr/etc/pandin/scripts/vencehoje
+    mv avencer /data/data/com.termux/files/usr/etc/pandin/scripts/avencer
+    mv vencidos /data/data/com.termux/files/usr/etc/pandin/scripts/vencidos
+    mv remover /data/data/com.termux/files/usr/etc/pandin/scripts/remover
+    mv removidos /data/data/com.termux/files/usr/etc/pandin/scripts/removidos
+
+    echo -e "\e[1;33mDesenvolvedor: \e[1;34mPandin\e[0m"
+    echo -e "\e[1;33mContato: \e[1;32mt.me/pandin\e[0m"
+    echo -e "\e[1;31mAtenção!\e[0m"
+    echo -e "\e[1;33mEnvie o comando \e[0;1mcd"
+    echo -e "\e[1;33mAgora, envie o comando \e[0;1m./painel\e[0m"
+
+    rm ppainel
+fi
+

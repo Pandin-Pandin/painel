@@ -1,0 +1,77 @@
+#!/bin/bash
+###############################################################
+#Script Name: painel
+#Descrption: este script consulta, adiciona e remove dados sobre
+#            clientes, revendedores e servidores.
+#Author: Pandin
+#Contact: https://t.me/pandin
+###############################################################
+
+clear
+
+echo -e "\e[41;1m        Painel        \e[0m\n"
+
+option1="Consultar"
+option2="Adicionar"
+option3="Vence Hoje"
+option4="A vencer"
+option5="Vencidos"
+option6="Remover"
+option7="Removidos"
+exit="SAIR"
+
+echo -e "\e[1;31m[\e[0;1m1\e[31m]\e[1;34m - \e[0;1;33m$option1\e[0m"
+echo -e "\e[1;31m[\e[0;1m2\e[31m]\e[1;34m - \e[0;1;33m$option2\e[0m"
+echo -e "\e[1;31m[\e[0;1m3\e[31m]\e[1;34m - \e[0;1;33m$option3\e[0m"
+echo -e "\e[1;31m[\e[0;1m4\e[31m]\e[1;34m - \e[0;1;33m$option4\e[0m"
+echo -e "\e[1;31m[\e[0;1m5\e[31m]\e[1;34m - \e[0;1;33m$option5\e[0m"
+echo -e "\e[1;31m[\e[0;1m6\e[31m]\e[1;34m - \e[0;1;33m$option6\e[0m"
+echo -e "\e[1;31m[\e[0;1m7\e[31m]\e[1;34m - \e[0;1;33m$option7\e[0m"
+echo -e "\e[1;31m[\e[0;1m0\e[31m]\e[1;34m - \e[0;1;33m$exit\e[0m\n"
+
+echo -ne "\e[33m\e[1mEscolha a opção: \e[0;1m"
+read option
+
+clear
+
+if [ $option != "1" -a $option != "2" -a $option != "3" -a $option != "4" -a $option != "5" -a $option != "6" -a $option != "7" -a $option != "0" ]; then
+    echo -e "\e[1;31mOpção Inválida!\e[0m"
+    sleep
+fi
+
+if [ $option = "1" ]; then
+/etc/pandin/scripts/consultar
+fi
+
+if [ $option = "2" ]; then
+/etc/pandin/scripts/adicionar
+fi
+
+if [ $option = "3" ]; then
+/etc/pandin/scripts/vencehoje
+fi
+
+if [ $option = "4" ]; then
+/etc/pandin/scripts/avencer
+fi
+
+if [ $option = "5" ]; then
+/etc/pandin/scripts/vencidos
+fi
+
+if [ $option = "6" ]; then
+/etc/pandin/scripts/remover
+fi
+
+if [ $option = "7" ]; then
+/etc/pandin/scripts/removidos
+fi
+
+if [ $option = "0" ]; then
+    clear
+    echo -e "\e[31m\e[1mSaindo do Script...\e[0m"
+    sleep 3
+    exit
+fi
+
+/bin/painel

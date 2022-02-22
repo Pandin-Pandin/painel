@@ -1,11 +1,11 @@
 #!/bin/bash
-###############################################################
+################################################################
 #Script Name: painel
 #Descrption: este script consulta, adiciona e remove dados sobre
 #            clientes, revendedores e servidores.
 #Author: Pandin
 #Contact: https://t.me/pandin
-###############################################################
+################################################################
 
 clear
 
